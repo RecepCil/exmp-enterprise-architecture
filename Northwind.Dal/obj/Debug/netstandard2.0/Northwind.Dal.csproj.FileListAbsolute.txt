@@ -1,0 +1,12 @@
+C:\Users\rcil\source\repos\Northwind\Northwind.Dal\bin\Debug\netstandard2.0\Northwind.Entities.dll
+C:\Users\rcil\source\repos\Northwind\Northwind.Dal\obj\Debug\netstandard2.0\Northwind.Dal.csprojAssemblyReference.cache
+C:\Users\rcil\source\repos\Northwind\Northwind.Dal\obj\Debug\netstandard2.0\Northwind.Dal.csproj.CoreCompileInputs.cache
+C:\Users\rcil\source\repos\Northwind\Northwind.Dal\obj\Debug\netstandard2.0\Northwind.Dal.AssemblyInfoInputs.cache
+C:\Users\rcil\source\repos\Northwind\Northwind.Dal\obj\Debug\netstandard2.0\Northwind.Dal.AssemblyInfo.cs
+C:\Users\rcil\source\repos\Northwind\Northwind.Dal\bin\Debug\netstandard2.0\Northwind.Dal.deps.json
+C:\Users\rcil\source\repos\Northwind\Northwind.Dal\bin\Debug\netstandard2.0\Northwind.Dal.dll
+C:\Users\rcil\source\repos\Northwind\Northwind.Dal\bin\Debug\netstandard2.0\Northwind.Dal.pdb
+C:\Users\rcil\source\repos\Northwind\Northwind.Dal\bin\Debug\netstandard2.0\Northwind.Entities.pdb
+C:\Users\rcil\source\repos\Northwind\Northwind.Dal\obj\Debug\netstandard2.0\Northwind.Dal.csproj.CopyComplete
+C:\Users\rcil\source\repos\Northwind\Northwind.Dal\obj\Debug\netstandard2.0\Northwind.Dal.dll
+C:\Users\rcil\source\repos\Northwind\Northwind.Dal\obj\Debug\netstandard2.0\Northwind.Dal.pdb

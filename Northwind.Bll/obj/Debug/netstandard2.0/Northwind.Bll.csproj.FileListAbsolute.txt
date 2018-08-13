@@ -1,0 +1,16 @@
+C:\Users\rcil\source\repos\Northwind\Northwind.Bll\bin\Debug\netstandard2.0\Northwind.Bll.deps.json
+C:\Users\rcil\source\repos\Northwind\Northwind.Bll\bin\Debug\netstandard2.0\Northwind.Bll.dll
+C:\Users\rcil\source\repos\Northwind\Northwind.Bll\bin\Debug\netstandard2.0\Northwind.Bll.pdb
+C:\Users\rcil\source\repos\Northwind\Northwind.Bll\bin\Debug\netstandard2.0\Northwind.Dal.dll
+C:\Users\rcil\source\repos\Northwind\Northwind.Bll\bin\Debug\netstandard2.0\Northwind.Entities.dll
+C:\Users\rcil\source\repos\Northwind\Northwind.Bll\bin\Debug\netstandard2.0\Northwind.Interfaces.dll
+C:\Users\rcil\source\repos\Northwind\Northwind.Bll\bin\Debug\netstandard2.0\Northwind.Dal.pdb
+C:\Users\rcil\source\repos\Northwind\Northwind.Bll\bin\Debug\netstandard2.0\Northwind.Interfaces.pdb
+C:\Users\rcil\source\repos\Northwind\Northwind.Bll\bin\Debug\netstandard2.0\Northwind.Entities.pdb
+C:\Users\rcil\source\repos\Northwind\Northwind.Bll\obj\Debug\netstandard2.0\Northwind.Bll.csprojAssemblyReference.cache
+C:\Users\rcil\source\repos\Northwind\Northwind.Bll\obj\Debug\netstandard2.0\Northwind.Bll.csproj.CoreCompileInputs.cache
+C:\Users\rcil\source\repos\Northwind\Northwind.Bll\obj\Debug\netstandard2.0\Northwind.Bll.AssemblyInfoInputs.cache
+C:\Users\rcil\source\repos\Northwind\Northwind.Bll\obj\Debug\netstandard2.0\Northwind.Bll.AssemblyInfo.cs
+C:\Users\rcil\source\repos\Northwind\Northwind.Bll\obj\Debug\netstandard2.0\Northwind.Bll.csproj.CopyComplete
+C:\Users\rcil\source\repos\Northwind\Northwind.Bll\obj\Debug\netstandard2.0\Northwind.Bll.dll
+C:\Users\rcil\source\repos\Northwind\Northwind.Bll\obj\Debug\netstandard2.0\Northwind.Bll.pdb
