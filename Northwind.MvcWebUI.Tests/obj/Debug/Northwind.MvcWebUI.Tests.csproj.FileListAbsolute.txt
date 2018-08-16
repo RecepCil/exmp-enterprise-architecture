@@ -1,0 +1,2 @@
+C:\Users\rcil\source\repos\Northwind\Northwind.MvcWebUI.Tests\obj\Debug\Northwind.MvcWebUI.Tests.csprojAssemblyReference.cache
+C:\Users\rcil\source\repos\Northwind\Northwind.MvcWebUI.Tests\obj\Debug\Northwind.MvcWebUI.Tests.csproj.CoreCompileInputs.cache

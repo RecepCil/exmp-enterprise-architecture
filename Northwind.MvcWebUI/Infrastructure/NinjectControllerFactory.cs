@@ -29,6 +29,8 @@ namespace Northwind.MvcWebUI.Infrastructure
             //Eğer biri senden IProductService isterse ona ProductManager ver;
             //productDal constructor'ına EfProductDal veriyoruz
             _ninjectKernel.Bind<IProductService>().To<ProductManager>().WithConstructorArgument("productDal",new EfProductDal());
+
+            _ninjectKernel.Bind<ICategoryService>().To<CategoryManager>().WithConstructorArgument("categoryDal", new EfCategoryDal());
         }
 
         protected override IController GetControllerInstance(RequestContext requestContext, Type controllerType)

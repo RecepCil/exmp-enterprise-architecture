@@ -157,11 +157,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HtmlHelpers\PagingHelpers.cs" />
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
+    <Compile Include="Models\PagingInfo.cs" />
+    <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +173,51 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\css\animate.min.css" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\css\bootstrap.min.css" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\css\demo.css" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\css\light-bootstrap-dashboard.css" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\css\pe-icon-7-stroke.css" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\img\default-avatar.png" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\img\faces\face-0.jpg" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\img\faces\face-1.jpg" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\img\faces\face-2.jpg" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\img\faces\face-3.jpg" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\img\faces\face-4.jpg" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\img\faces\face-5.jpg" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\img\faces\face-6.jpg" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\img\faces\face-7.jpg" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\img\faces\tim_vector.jpe" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\img\favicon.ico" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\img\full-screen-image-3.jpg" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\img\loading-bubbles.svg" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\img\mask.png" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\img\new_logo.png" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\img\sidebar-1.jpg" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\img\sidebar-2.jpg" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\img\sidebar-3.jpg" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\img\sidebar-4.jpg" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\img\sidebar-5.jpg" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\img\tim_80x80.png" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\js\bootstrap-notify.js" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\js\bootstrap-select.js" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\js\bootstrap.min.js" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\js\chartist.min.js" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\js\demo.js" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\js\jquery.3.2.1.min.js" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\js\light-bootstrap-dashboard.js" />
+    <Content Include="Content\light-bootstrap-dashboard-master\dashboard.html" />
+    <Content Include="Content\light-bootstrap-dashboard-master\documentation\css\documentation.css" />
+    <Content Include="Content\light-bootstrap-dashboard-master\documentation\tutorial-components.html" />
+    <Content Include="Content\light-bootstrap-dashboard-master\icons.html" />
+    <Content Include="Content\light-bootstrap-dashboard-master\maps.html" />
+    <Content Include="Content\light-bootstrap-dashboard-master\notifications.html" />
+    <Content Include="Content\light-bootstrap-dashboard-master\table.html" />
+    <Content Include="Content\light-bootstrap-dashboard-master\template.html" />
+    <Content Include="Content\light-bootstrap-dashboard-master\typography.html" />
+    <Content Include="Content\light-bootstrap-dashboard-master\upgrade.html" />
+    <Content Include="Content\light-bootstrap-dashboard-master\user.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -178,6 +227,41 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\mixins\_buttons.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\mixins\_cards.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\mixins\_chartist.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\mixins\_icons.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\mixins\_inputs.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\mixins\_labels.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\mixins\_morphing-buttons.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\mixins\_navbars.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\mixins\_social-buttons.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\mixins\_tabs.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\mixins\_transparency.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\mixins\_vendor-prefixes.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\_alerts.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\_buttons.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\_cards.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\_chartist.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\_checkbox-radio-switch.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\_dropdown.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\_footers.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\_inputs.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\_misc.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\_mixins.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\_navbars.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\_responsive.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\_sidebar-and-main-panel.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\_tables.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\_typography.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\lbd\_variables.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\assets\sass\light-bootstrap-dashboard.scss" />
+    <Content Include="Content\light-bootstrap-dashboard-master\CHANGELOG.md" />
+    <Content Include="Content\light-bootstrap-dashboard-master\LICENSE.md" />
+    <Content Include="Content\light-bootstrap-dashboard-master\README.md" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -201,10 +285,13 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Category\Listing.cshtml" />
+    <Content Include="Views\Category\List.cshtml" />
+    <Content Include="Views\Product\Indexing.cshtml" />
+    <Content Include="Views\Product\Recep.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

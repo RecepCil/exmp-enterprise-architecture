@@ -1,0 +1,33 @@
+﻿
+@model Northwind.MvcWebUI.Models.ProductViewModel
+
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    @foreach (var product in Model.Products)
+    {
+        <div class="item">
+
+            <h3>
+                @product.ProductName
+            </h3>
+            <h3>
+                @product.UnitPrice
+            </h3>
+        </div>
+        <br />
+    }
+
+    <div class="pager">
+        @*HtmlHelpers klasörü altında, kendi tanımladığım Html Helper'ı çağırarak kullandım*@
+        @using Northwind.MvcWebUI.HtmlHelpers
+        @Html.Pager((Northwind.MvcWebUI.Models.PagingInfo)Model.PagingInfo)
+        @*Html.RecoButton()*@
+    </div>
+
+</div>

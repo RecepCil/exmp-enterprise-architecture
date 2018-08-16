@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Northwind.Entities.Category>
+
+@Html.RouteLink("Home", new { controller = "Product", action = "Index", category = 0 }
+                                                //Home seçilmişse, css'ini selected ayarla
+                                                ,new { @class=ViewBag.CurrentCategory==0?"selected":null})
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+
+            @Html.RouteLink(item.CategoryName,new {
+                                                    category=item.CategoryID,
+                                                    controller="Product",action="Index"
+                                                    },
+
+                                                    //Seçilen Category'in css'ni selected yap,yoksa atama
+                                                    new {@class=item.CategoryID==ViewBag.CurrentCategory?"selected":null}
+                                                    )
+        </td>
+    </tr>
+}
+
+

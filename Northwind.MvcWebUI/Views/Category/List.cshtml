@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Northwind.Entities.Category>
+
+<div class="sidebar-wrapper">
+    <div class="logo">
+
+        @Html.RouteLink("HOME", new { controller = "Product", action = "Index", category = 0 }, new { @class = ViewBag.CurrentCategory == 0 ? "simple-text" : "simple-text" })
+
+    </div>
+    <ul class="nav">
+        @foreach (var item in Model)
+        {
+            if (ViewBag.CurrentCategory == item.CategoryID)     //Seçilen Kategorinin görseliyle oyna
+            {
+                <li class="active">
+                    <i class="pe-7s-note2" style="margin-left:25px;margin-top:4px;"></i>
+
+                    @Html.RouteLink(item.CategoryName,new {
+                                                category=item.CategoryID,
+                                                controller="Product",action="Index"
+                                                 },
+                                                 //Seçilen Category'in css'ni selected yap,yoksa atama
+                                                 new {@class= "routeLink",  @style="font-size:14px;line-height:22px;font-weight:300;"})
+
+                </li>
+            }
+            else
+            {
+                <li>
+                    <i class="pe-7s-note2" style="margin-left:25px;margin-top:4px;"></i>
+
+                    @Html.RouteLink(item.CategoryName,new {
+                                                category=item.CategoryID,
+                                                controller="Product",action="Index"
+                                                 },
+                                                 //Seçilen Category'in css'ni selected yap,yoksa atama
+                                                 new {@class= "routeLink",  @style="font-size:14px;line-height:22px;font-weight:300;"})
+                </li>
+            }
+        }
+        <li class="active-pro">
+            <a href="upgrade.html">
+                <i class="pe-7s-rocket"></i>
+                <p>Upgrade to PRO</p>
+            </a>
+        </li>
+    </ul>
+</div>
+
