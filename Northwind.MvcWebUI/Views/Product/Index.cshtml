@@ -1,8 +1,6 @@
 ﻿@model Northwind.MvcWebUI.Models.ProductViewModel
 
 @{
-    /**/
-
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -30,28 +28,33 @@
                         <td>@product.ProductName</td>
                         <td>$@product.UnitPrice</td>
                         <td>
-
-                            @*Sepete Ekle*@
+<!--Sepete Ekle-->
                             @using (Html.BeginForm("AddToCart", "Cart"))
                             {
-                                @Html.Hidden("productId", product.ProductID)
-                                //Html.HiddenFor(p=>product.ProductID)
+                                @Html.Hidden("productId", product.ProductID) //Html.HiddenFor(p=>product.ProductID)
 
-                                <input type="submit" value="Add to cart" />
+                                <input type="submit" value="Add To Cart" />
                             }
-
                         </td>
+                        @*
+<!--Other Ways-->
+                        <td>@Html.ActionLink("ActionLink","AddToCart","Cart",new { productId = product.ProductID },null)</td>
+                        <td><a href="/Cart/AddToCart?productId=@product.ProductID" >aLinki</a></td>
+                         *@
                     </tr>
                     }
                 </tbody>
             </table>
 
+
+<!--Pager-->
             <div class="pager">
                 @*HtmlHelpers klasörü altında, kendi tanımladığım Html Helper'ı çağırarak kullandım*@
                 @using Northwind.MvcWebUI.HtmlHelpers
                 @Html.Pager((Northwind.MvcWebUI.Models.PagingInfo)Model.PagingInfo, (int)ViewBag.CurrentCategory)
                 @*Html.RecoButton()*@
             </div>
+
 
         </div>
     </div>

@@ -1,0 +1,46 @@
+﻿@model Northwind.Entities.Cart
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Products in the cart</h2>
+
+<table>
+    <tr>
+        <td>Product Name</td>
+        <td>Unit Price</td>
+        <td>Quantity</td>
+        <td>Tutar</td>
+        <td></td>
+    </tr>
+
+    @foreach (var line in Model.Lines)
+    {
+        <tr>
+            <td>@line.Product.ProductID</td>
+            <td>@line.Product.UnitPrice.ToString("c")</td>
+            <td>@line.Quantity</td>
+            <td>@((line.Quantity * line.Product.UnitPrice).ToString("c"))</td>
+            <td>
+<!--Remove From Cart-->
+                @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                {
+                    @Html.Hidden("productId", line.Product.ProductID) //Html.HiddenFor(p=>product.ProductID)
+
+                    <input type="submit" value="Remove From Cart" />
+                }
+            </td>
+            @*
+<!--Other Ways-->    
+            <td>@Html.ActionLink("ActionLink","RemoveFromCart","Cart",new { productId = line.Product.ProductID },null)</td>
+            <td><a href="/Cart/RemoveFromCart?productId=@line.Product.ProductID">aLinki</a></td>*@         
+        </tr>
+    }
+</table>
+
+<p align="center" class="places-buttons" >
+    @Html.ActionLink("Checkout Now","Checkout")
+</p>
+
