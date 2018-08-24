@@ -16,7 +16,7 @@ namespace Northwind.MvcWebUI.Controllers
             _categoryService = categoryService;
         }
 
-        public PartialViewResult List(int category = 0)
+        public PartialViewResult List(int category = 0,bool IsAdmin = false)
         {
             ViewBag.CurrentCategory = category;
             return PartialView(_categoryService.GetAll());

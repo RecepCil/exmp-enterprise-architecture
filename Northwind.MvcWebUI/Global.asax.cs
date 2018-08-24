@@ -1,4 +1,6 @@
-﻿using Northwind.MvcWebUI.Infrastructure;
+﻿using Northwind.Entities;
+using Northwind.MvcWebUI.Infrastructure;
+using Northwind.MvcWebUI.ModelBinders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +20,13 @@ namespace Northwind.MvcWebUI
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+
+            //Bunlar hep extendable, kendin yeni anlamlar katıyorsun
+
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
+
+            //Eğer biri senden parametre olarak Cart nesnesi isterse, ona CartModelBinder'ı ver.
+            System.Web.Mvc.ModelBinders.Binders.Add(typeof(Cart), new CartModelBinder());
         }
     }
 }

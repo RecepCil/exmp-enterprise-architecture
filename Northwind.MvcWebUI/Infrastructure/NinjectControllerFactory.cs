@@ -21,7 +21,11 @@ namespace Northwind.MvcWebUI.Infrastructure
         public NinjectControllerFactory()
         {
             _ninjectKernel = new StandardKernel();
+
+            
+            /* Sistem isteği BLL'e mi yapsın Service'e mi? */
             AddBllBindings();
+            //AddServiceBindings();
         }
 
         private void AddBllBindings()
@@ -31,7 +35,19 @@ namespace Northwind.MvcWebUI.Infrastructure
             _ninjectKernel.Bind<IProductService>().To<ProductManager>().WithConstructorArgument("productDal",new EfProductDal());
 
             _ninjectKernel.Bind<ICategoryService>().To<CategoryManager>().WithConstructorArgument("categoryDal", new EfCategoryDal());
+            _ninjectKernel.Bind<IAuthenticationService>().To<AuthenticationManager>().WithConstructorArgument("authenticationDal", new EfAuthenticationDal());
         }
+
+        public void AddServiceBindings()
+        {
+            //Eğer biri senden IProductService isterse ona,
+            //WcfProxy'e git, parametre olarak IProductService ver onun da CreateChannel'ını çalıştır
+            _ninjectKernel.Bind<IProductService>().ToConstant(WcfProxy<IProductService>.CreateChannel());
+
+            _ninjectKernel.Bind<ICategoryService>().ToConstant(WcfProxy<ICategoryService>.CreateChannel());
+            _ninjectKernel.Bind<IAuthenticationService>().ToConstant(WcfProxy<IAuthenticationService>.CreateChannel());
+        }
+
 
         protected override IController GetControllerInstance(RequestContext requestContext, Type controllerType)
         {
