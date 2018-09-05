@@ -9,7 +9,32 @@
 
 @using (Html.BeginForm())
 {
-   @Html.EditorForModel()
+    if (ViewBag.Customer != null)
+    {
+        @Html.DisplayNameFor(m => m.Name) <br />
+        @Html.TextBoxFor(m => m.Name, new { @Value = @ViewBag.Customer.ContactName }) <br /><br />
 
-    <input type="submit"  value="Complete Checkout"/>
+        @Html.DisplayNameFor(m => m.Address1) <br />
+        @Html.TextBoxFor(m => m.Address1, new { @Value = @ViewBag.Customer.Address }) <br /><br />
+
+        @Html.DisplayNameFor(m => m.Address2) <br />
+        @Html.TextBoxFor(m => m.Address2) <br /><br />
+
+        @Html.DisplayNameFor(m => m.Address3) <br />
+        @Html.TextBoxFor(m => m.Address3) <br /><br />
+
+        @Html.DisplayNameFor(m => m.City) <br />
+        @Html.TextBoxFor(m => m.City, new { @Value = @ViewBag.Customer.City }) <br /><br />
+
+        @Html.DisplayNameFor(m => m.Country) <br />
+        @Html.TextBoxFor(m => m.Country, new { @Value = @ViewBag.Customer.Country }) <br /><br />
+
+        @Html.DisplayNameFor(m => m.IsGift) <br />
+        @Html.CheckBoxFor(m => m.IsGift) <br /><br />
+    }
+    else
+    {
+        @Html.EditorForModel()
+    }
+    <input type="submit" value="Complete Checkout" />
 }

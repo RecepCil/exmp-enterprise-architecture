@@ -1,18 +1,36 @@
 ﻿@model Northwind.Entities.Cart
 
-<div class="collapse navbar-collapse" onclick="location.href='/Cart/Index';" style="cursor:pointer;">
-    <ul class="nav navbar-nav navbar-left">
-
-        <li class="dropdown">
-            <a href="/Cart/Index" class="dropdown-toggle" data-toggle="dropdown">
-                <p>  Total: @Model.Total.ToString("c") </p>
-                @*<b class="caret hidden-sm hidden-xs"></b>*@
-                <span class="notification hidden-sm hidden-xs">@Model.Lines.Sum(x => x.Quantity)</span>
-                @*<p class="hidden-lg hidden-md">*@
-                @*<b class="caret"></b>*@
-                @*@Html.ActionLink("Checkout", "Index", "Cart")*@
-                @*</p>*@
+<div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a>
+                @if (ViewBag.Account != null)
+                {
+                    <p>@ViewBag.Account.Email</p>
+                }
             </a>
         </li>
+        <li>
+            <div style="float:right;">
+                <div class="collapse navbar-collapse" onclick="location.href='/Cart/Index';" style="cursor:pointer;">
+                    <ul class="nav navbar-nav navbar-left">
+
+                        <li class="dropdown">
+                            <a href="/Cart/Index" class="dropdown-toggle" data-toggle="dropdown">
+                                <p>  Total: @Model.Total.ToString("c") </p>
+                                @*<b class="caret hidden-sm hidden-xs"></b>*@
+                                <span class="notification hidden-sm hidden-xs">@Model.Lines.Sum(x => x.Quantity)</span>
+                                @*<p class="hidden-lg hidden-md">*@
+                                @*<b class="caret"></b>*@
+                                @*@Html.ActionLink("Checkout", "Index", "Cart")*@
+                                @*</p>*@
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </li>
+        <li class="separator hidden-lg"></li>
     </ul>
 </div>

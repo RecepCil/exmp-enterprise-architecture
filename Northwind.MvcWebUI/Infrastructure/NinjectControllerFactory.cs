@@ -22,10 +22,9 @@ namespace Northwind.MvcWebUI.Infrastructure
         {
             _ninjectKernel = new StandardKernel();
 
-            
             /* Sistem isteği BLL'e mi yapsın Service'e mi? */
-            AddBllBindings();
-            //AddServiceBindings();
+            //AddBllBindings();
+            AddServiceBindings();
         }
 
         private void AddBllBindings()
@@ -36,6 +35,11 @@ namespace Northwind.MvcWebUI.Infrastructure
 
             _ninjectKernel.Bind<ICategoryService>().To<CategoryManager>().WithConstructorArgument("categoryDal", new EfCategoryDal());
             _ninjectKernel.Bind<IAuthenticationService>().To<AuthenticationManager>().WithConstructorArgument("authenticationDal", new EfAuthenticationDal());
+
+            _ninjectKernel.Bind<ICustomerService>().To<CustomerManager>().WithConstructorArgument("customerDal", new EfCustomerDal());
+            _ninjectKernel.Bind<IAccountService>().To<AccountManager>().WithConstructorArgument("accountDal", new EfAccountDal());
+            _ninjectKernel.Bind<IOrderService>().To<OrderManager>().WithConstructorArgument("orderDal", new EfOrderDal());
+            _ninjectKernel.Bind<IOrderDetailService>().To<OrderDetailManager>().WithConstructorArgument("orderDetailDal", new EfOrderDetailDal());
         }
 
         public void AddServiceBindings()
@@ -46,8 +50,13 @@ namespace Northwind.MvcWebUI.Infrastructure
 
             _ninjectKernel.Bind<ICategoryService>().ToConstant(WcfProxy<ICategoryService>.CreateChannel());
             _ninjectKernel.Bind<IAuthenticationService>().ToConstant(WcfProxy<IAuthenticationService>.CreateChannel());
-        }
 
+            _ninjectKernel.Bind<ICustomerService>().ToConstant(WcfProxy<ICustomerService>.CreateChannel());
+            _ninjectKernel.Bind<IAccountService>().ToConstant(WcfProxy<IAccountService>.CreateChannel());
+            _ninjectKernel.Bind<IOrderService>().ToConstant(WcfProxy<IOrderService>.CreateChannel());
+            _ninjectKernel.Bind<IOrderDetailService>().ToConstant(WcfProxy<IOrderDetailService>.CreateChannel());
+
+        }
 
         protected override IController GetControllerInstance(RequestContext requestContext, Type controllerType)
         {

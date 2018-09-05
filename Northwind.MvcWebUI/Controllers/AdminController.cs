@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace Northwind.MvcWebUI.Controllers
 {
+    [Authorize(Users = "admin")]
     public class AdminController : Controller
     {
         private IProductService _productService;
@@ -24,8 +25,7 @@ namespace Northwind.MvcWebUI.Controllers
 
             return View(products);
         }
-
-        [Authorize]
+        
         public ActionResult CreateNew()
         {
             ViewBag.Categories = _categoryService.GetAll();
@@ -33,7 +33,6 @@ namespace Northwind.MvcWebUI.Controllers
         }
 
         [HttpPost]
-        [Authorize]
         public ActionResult CreateNew(Product product)
         {
             if (ModelState.IsValid)
@@ -44,6 +43,7 @@ namespace Northwind.MvcWebUI.Controllers
             return View(product);
         }
 
+        [Authorize]
         public ActionResult Edit(int productId)
         {
             ViewBag.Categories = _categoryService.GetAll();
@@ -62,6 +62,7 @@ namespace Northwind.MvcWebUI.Controllers
             return RedirectToAction("Edit",new { productId = product.ProductID });
         }
 
+        [Authorize]
         public ActionResult Delete(int productId)
         {
             _productService.Delete(productId);

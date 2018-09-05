@@ -110,3 +110,7 @@ C:\Users\rcil\source\repos\Northwind\Northwind.WcfLibrary\obj\Debug\Northwind.Wc
 C:\Users\rcil\source\repos\Northwind\Northwind.WcfLibrary\obj\Debug\Northwind.WcfLibrary.csproj.CopyComplete
 C:\Users\rcil\source\repos\Northwind\Northwind.WcfLibrary\obj\Debug\Northwind.WcfLibrary.dll
 C:\Users\rcil\source\repos\Northwind\Northwind.WcfLibrary\obj\Debug\Northwind.WcfLibrary.pdb
+C:\Users\rcil\source\repos\Northwind\Northwind.WcfLibrary\bin\Debug\EntityFramework.dll
+C:\Users\rcil\source\repos\Northwind\Northwind.WcfLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rcil\source\repos\Northwind\Northwind.WcfLibrary\bin\Debug\EntityFramework.xml
+C:\Users\rcil\source\repos\Northwind\Northwind.WcfLibrary\bin\Debug\EntityFramework.SqlServer.xml

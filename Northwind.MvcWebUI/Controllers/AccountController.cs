@@ -12,33 +12,82 @@ namespace Northwind.MvcWebUI.Controllers
     public class AccountController : Controller
     {
         private IAuthenticationService _authenticationService;
+        private ICustomerService _customerService;
+        private IAccountService _accountService;
 
-        public AccountController(IAuthenticationService authenticationService)
+        public AccountController(IAuthenticationService authenticationService, ICustomerService customerService, IAccountService accountService)
         {
             _authenticationService = authenticationService;
+            _customerService = customerService;
+            _accountService = accountService;
         }
 
-        public ActionResult Login()
+        public ActionResult AdminLogin()
         {
-            return View(new User());
+            return View(new Account());
         }
 
         [HttpPost]
-        public ActionResult Login(User user, string returnUrl)
+        public ActionResult AdminLogin(Account account, string returnUrl)
         {
-            User validatedUser = _authenticationService.Authenticate(user);
+            Account validatedAccount = _authenticationService.Authenticate(account);
 
-            if (validatedUser == null)
+            if (validatedAccount == null)
             {
                 ModelState.AddModelError("Hata", "Kullanıcı adı veya şifresi hatalı.");
             }
 
             if (ModelState.IsValid)
             {
-                    FormsAuthentication.SetAuthCookie(user.UserName, false);
-                    return Redirect(returnUrl);
+                FormsAuthentication.SetAuthCookie(account.Email, false);
+
+                Session["account"] = validatedAccount;
+
+                return Redirect(returnUrl);
             }
+
             return View();
         }
+
+        public ActionResult Login()
+        {
+            return View(new Account());
+        }
+
+        [HttpPost]                          
+        public ActionResult Login(Account account, string returnUrl)
+        {
+            Account validatedAccount = _authenticationService.CustomerLogingIn(account);
+
+            if (validatedAccount == null)
+            {
+                ModelState.AddModelError("Hata", "Kullanıcı adı veya şifresi hatalı.");
+            }
+
+            if (ModelState.IsValid)
+            {
+                FormsAuthentication.SetAuthCookie(account.Email, false);
+
+                Session["account"] = validatedAccount;
+
+                //return Redirect(returnUrl);
+                return RedirectToAction("Index", "Product");
+            }
+            else return View();
+        }
+
+        public ActionResult SignUp()
+        {
+            return View(new Account());
+        }
+
+        [HttpPost]
+        public ActionResult SignUp(Customer customer, Account account)
+        {
+            Account newAccount = _authenticationService.CustomerSigningUp(account, customer);
+            Session["account"] = newAccount;
+            return RedirectToAction("Index","Product");
+        }
+
     }
 }

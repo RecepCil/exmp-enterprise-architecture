@@ -33,6 +33,7 @@ namespace Northwind.Dal.Concrete.EntityFramework
         public List<Product> GetAll()
         {
             return _context.Products.Include("Category").ToList();
+
         }
 
         public void Update(Product product)

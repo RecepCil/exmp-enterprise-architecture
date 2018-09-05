@@ -20,9 +20,19 @@ namespace Northwind.WcfLibrary.Concrete
 
         AuthenticationManager _authenticaticationManager = new AuthenticationManager(new EfAuthenticationDal());
 
-        public User Authenticate(User user)
+        public Account Authenticate(Account account)
         {
-            return _authenticaticationManager.Authenticate(user);
+            return _authenticaticationManager.Authenticate(account);
+        }
+
+        public Account CustomerLogingIn(Account account)
+        {
+            return _authenticaticationManager.CustomerLogingIn(account);
+        }
+
+        public Account CustomerSigningUp(Account account,Customer customer)
+        {
+            return _authenticaticationManager.CustomerSigningUp(account,customer);
         }
     }
 }

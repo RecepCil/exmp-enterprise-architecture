@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Northwind.MvcWebUI.Infrastructure
 {
-    //Burası bize, EndPoint(Proxy) create edecek
+    //Burası bize, Client için EndPoint(Proxy) create edecek
     public static class WcfProxy<T>
     {
         public static T CreateChannel()
@@ -22,5 +22,22 @@ namespace Northwind.MvcWebUI.Infrastructure
             var channel = new ChannelFactory<T>(binding,address);
             return channel.CreateChannel();
         }
+     
+
+        //public static IProductService CreateChannel()
+        //{
+        //    string address = "http://localhost:52771/ProductService.svc?wsdl";
+
+        //    var binding = new BasicHttpBinding();
+
+        //    var channel = new ChannelFactory<IProductService>(binding, address);
+
+        //    return channel.CreateChannel();
+        //}
+
+
+
+
+
     }
 }

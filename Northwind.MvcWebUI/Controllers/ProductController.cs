@@ -59,5 +59,12 @@ namespace Northwind.MvcWebUI.Controllers
 
             return View(pvm);
         }
+
+        public ActionResult Deneme()
+        {
+            Account account = (Account)Session["account"];
+
+            return View(account);
+        }
     }
 }

@@ -12,6 +12,12 @@ namespace Northwind.Interfaces
     public interface IAuthenticationService
     {
         [OperationContract]  //Bunu da hizmete aç
-        User Authenticate(User user);
+        Account Authenticate(Account account);
+
+        [OperationContract]  
+        Account CustomerLogingIn(Account account);
+        [OperationContract]  
+        Account CustomerSigningUp(Account account,Customer customer);
+
     }
 }
